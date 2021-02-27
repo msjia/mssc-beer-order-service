@@ -3,10 +3,12 @@ D:\My Workspace\java\mssc-brewery-ws\mssc-beer-order-service\src\main\java\guru\
 D:\My Workspace\java\mssc-brewery-ws\mssc-beer-order-service\src\main\java\guru\sfg\beer\order\service\web\mappers\BeerOrderLineMapperDecorator.java
 D:\My Workspace\java\mssc-brewery-ws\mssc-beer-order-service\src\main\java\guru\sfg\beer\order\service\services\BeerOrderServiceImpl.java
 D:\My Workspace\java\mssc-brewery-ws\mssc-beer-order-service\src\main\java\guru\sfg\beer\order\service\BeerOrderServiceApplication.java
+D:\My Workspace\java\mssc-brewery-ws\mssc-beer-order-service\src\main\java\guru\sfg\beer\order\service\domain\BeerOrderEventEnum.java
+D:\My Workspace\java\mssc-brewery-ws\mssc-beer-order-service\src\main\java\guru\sfg\beer\order\service\config\JmsConfig.java
 D:\My Workspace\java\mssc-brewery-ws\mssc-beer-order-service\src\main\java\guru\sfg\beer\order\service\repositories\CustomerRepository.java
 D:\My Workspace\java\mssc-brewery-ws\mssc-beer-order-service\src\main\java\guru\sfg\beer\order\service\web\mappers\BeerOrderLineMapper.java
-D:\My Workspace\java\mssc-brewery-ws\mssc-beer-order-service\src\main\java\guru\sfg\beer\order\service\domain\OrderStatusEnum.java
 D:\My Workspace\java\mssc-brewery-ws\mssc-beer-order-service\src\main\java\guru\sfg\beer\order\service\services\TastingRoomService.java
+D:\My Workspace\java\mssc-brewery-ws\mssc-beer-order-service\src\main\java\guru\sfg\beer\order\service\domain\BeerOrderStatusEnum.java
 D:\My Workspace\java\mssc-brewery-ws\mssc-beer-order-service\src\main\java\guru\sfg\beer\order\service\services\beer\BeerService.java
 D:\My Workspace\java\mssc-brewery-ws\mssc-beer-order-service\src\main\java\guru\sfg\beer\order\service\web\model\CustomerDto.java
 D:\My Workspace\java\mssc-brewery-ws\mssc-beer-order-service\src\main\java\guru\sfg\beer\order\service\config\TaskConfig.java
