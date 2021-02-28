@@ -20,7 +20,7 @@ import java.util.UUID;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class ValidationOrderAction implements Action<BeerOrderStatusEnum, BeerOrderEventEnum> {
+public class ValidateOrderAction implements Action<BeerOrderStatusEnum, BeerOrderEventEnum> {
 
     private final BeerOrderRepository beerOrderRepository;
     private final BeerOrderMapper beerOrderMapper;
