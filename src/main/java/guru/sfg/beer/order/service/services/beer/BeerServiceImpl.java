@@ -1,10 +1,8 @@
 package guru.sfg.beer.order.service.services.beer;
 
-import guru.sfg.beer.order.service.web.model.BeerDto;
-import lombok.extern.slf4j.Slf4j;
+import common.model.BeerDto;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
