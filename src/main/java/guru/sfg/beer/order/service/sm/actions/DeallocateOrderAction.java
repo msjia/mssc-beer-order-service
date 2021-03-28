@@ -1,6 +1,6 @@
 package guru.sfg.beer.order.service.sm.actions;
 
-import common.model.events.ValidateOrderRequest;
+import common.model.events.DeallocateOrderRequest;
 import guru.sfg.beer.order.service.config.JmsConfig;
 import guru.sfg.beer.order.service.domain.BeerOrder;
 import guru.sfg.beer.order.service.domain.BeerOrderEventEnum;
@@ -21,11 +21,10 @@ import java.util.UUID;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class ValidateOrderAction implements Action<BeerOrderStatusEnum, BeerOrderEventEnum> {
-
+public class DeallocateOrderAction implements Action<BeerOrderStatusEnum, BeerOrderEventEnum> {
+    private final JmsTemplate jmsTemplate;
     private final BeerOrderRepository beerOrderRepository;
     private final BeerOrderMapper beerOrderMapper;
-    private final JmsTemplate jmsTemplate;
 
     @Override
     public void execute(StateContext<BeerOrderStatusEnum, BeerOrderEventEnum> context) {
@@ -33,10 +32,13 @@ public class ValidateOrderAction implements Action<BeerOrderStatusEnum, BeerOrde
         Optional<BeerOrder> beerOrderOptional = beerOrderRepository.findById(UUID.fromString(beerOrderId));
 
         beerOrderOptional.ifPresentOrElse(beerOrder -> {
-            jmsTemplate.convertAndSend(JmsConfig.VALIDATE_ORDER_QUEUE, ValidateOrderRequest.builder()
-                    .beerOrder(beerOrderMapper.beerOrderToDto(beerOrder))
-                    .build());
-        }, ()-> log.debug("Order Not Found, Id: " + beerOrderId));
+            jmsTemplate.convertAndSend(JmsConfig.DEALLOCATE_ORDER_QUEUE,
+                    DeallocateOrderRequest.builder()
+                            .beerOrderDto(beerOrderMapper.beerOrderToDto(beerOrder))
+                            .build());
+
+            log.debug("Sent Allocation Request for order id: " + beerOrderId);
+        }, () -> log.debug("Order Not Found, Id: " + beerOrderId));
 
     }
 }
